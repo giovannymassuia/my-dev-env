@@ -1,13 +1,6 @@
-" .ideavimrc is a configuration file for IdeaVim plugin. It uses
-"   the same commands as the original .vimrc configuration.
-" You can find a list of commands here: https://jb.gg/h38q75
-" Find more examples here: https://jb.gg/share-ideavimrc
-
-
-"" -- Suggested options --
-" Show a few lines of context around the cursor. Note that this makes the
-" text scroll if you mouse-click near the start or end of the window.
 set scrolloff=5
+set relativenumber
+set idearefactormode=keep
 
 " Do incremental searching.
 set incsearch
@@ -24,6 +17,9 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 
 Plug 'preservim/nerdtree'
+set NERDTree
+let g:NERDTreeMapActivateNode='l'
+let g:NERDTreeMapJumpParent='h'
 map <leader>e :NERDTree<CR>
 map <leader>ee :NERDTreeToggle<CR>
 " map <leader>e :NERDTreeFind<cr>
