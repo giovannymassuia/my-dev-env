@@ -11,3 +11,13 @@ My local dev env config files
 `:Mason`
 
 ### keymaps
+
+-
+
+### Go
+
+- `go install -v github.com/incu6us/goimports-reviser/v3@latest`
+- `go install mvdan.cc/gofumpt@latest`
+- `go install github.com/segmentio/golines@latest`
+
+- Also install them using Mason
