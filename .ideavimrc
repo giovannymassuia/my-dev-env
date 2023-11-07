@@ -1,7 +1,10 @@
 set scrolloff=5
 set relativenumber
 set idearefactormode=keep
-set timeoutlen=400 " time to wait for a mapped sequence to complete (in milliseconds)
+set timeoutlen=800 " time to wait for a mapped sequence to complete (in milliseconds)
+
+"" remap leader to space
+let mapleader = " "
 
 """ Editing and Reloading the Config
 set clipboard+=unnamed
@@ -36,6 +39,54 @@ nnoremap <leader>en :action EditSourceInNewWindow<CR>
 nnoremap <leader>nw :action NextWindow<CR>
 
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+set which-key
+
+""" Surround Plugin  --------------------------------
+" Emulates vim-surround. Mappings to easily delete, change and add such surroundings in pairs
+" Basic Commands:
+"   cs   Change surroundings
+"   cst  Change surroundings tag
+"   ds   Delete surroundings
+"   dst  Delete surroundings tag
+"   ys   Surround text object
+" See https://github.com/tpope/vim-surround/blob/master/doc/surround.txt for details
+Plug 'tpope/vim-surround'
+set surround
+
+""" multiple-cursors plugin  --------------------------------
+" Emulates vim-multiple-cursors
+" Basic Commands:
+"   <C-n> start multicursor
+"   <C-n> next match
+"   <C-x> skip next match
+"   <C-p> remove current match and go back to previous one
+" See https://github.com/terryma/vim-multiple-cursors for details
+set multiple-cursors
+map mc <A-n> " start multicursor
+map mx <A-x> " skip next match
+map mp <A-p> " remove current match and go back to previous one
+
+""" NERDTree plugin  --------------------------------
+" Emulates NERDTree
+" Basic Commands:
+"   <leader>e  Open NERDTree (mapped bellow)
+"   <leader>ee Toggle NERDTree (mapped bellow)
+"   q	    Close the NERDTree windowe
+"   o   	Open files, directories and bookmarks
+"   go   	Open selected file, but leave cursor in the NERDTree
+"   i   	Open selected file in a split window
+"   gi   	Same as i, but leave the cursor on the NERDTree
+"   s   	Open selected file in a new vsplit
+"   gs   	Same as s, but leave the cursor on the NERDTree
+"   <C-J>	Jump down to next sibling of the current directory
+"   <C-K>	Jump up to previous sibling of the current directory
+"   R	    Recursively refresh the current root
+"   m	    Display the NERDTree menu
+" See  https://github.com/JetBrains/ideavim/wiki/NERDTree-support for details
+Plug 'preservim/nerdtree'
+set NERDTree
+map <leader>ee :NERDTree<CR>
+map <leader>et :NERDTreeToggle<CR>
 
 Plug 'easymotion/vim-easymotion'
 map <leader>J <Plug>(easymotion-s)
@@ -47,17 +98,8 @@ Plug 'machakann/vim-highlightedyank'
 " Commentary plugin
 Plug 'tpope/vim-commentary'
 
-Plug 'preservim/nerdtree'
-set NERDTree
-let g:NERDTreeMapActivateNode='l'
-let g:NERDTreeMapJumpParent='h'
-map <leader>e :NERDTree<CR>
-map <leader>ee :NERDTreeToggle<CR>
-" map <leader>e :NERDTreeFind<cr>
-
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
-"" remap leader to space
-let mapleader = " "
+
 
 "" exit normal mode with jk
 imap jk <Esc>
@@ -69,6 +111,10 @@ map <leader>z <Action>(ToggleDistractionFreeMode)
 map <leader>t <Action>(ActivateTerminalToolWindow)
 "" open new terminal in current directory
 map <leader>nt <Action>(Terminal.OpenInTerminal)
+"" rerun
+map <leader>rr <Action>(Rerun)<CR>
+"" run
+map <leader>rc <Action>(Run)<CR>
 
 "" Map \r to the Reformat Code action
 "map \r <Action>(ReformatCode)
