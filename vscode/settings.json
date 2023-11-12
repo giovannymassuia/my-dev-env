@@ -1,0 +1,109 @@
+{
+    "editor.tabSize": 4,
+    "editor.fontFamily": "'Fira Code',Menlo, Monaco, 'Courier New', monospace",
+    "editor.inlineSuggest.enabled": true,
+    "java.import.gradle.java.home": "/opt/homebrew/Cellar/openjdk@17/17.0.6/libexec/openjdk.jdk/Contents/Home",
+    "workbench.iconTheme": "material-icon-theme",
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.fontSize": 14,
+    "explorer.compactFolders": false,
+    "editor.fontLigatures": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "redhat.telemetry.enabled": true,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": true,
+        "scminput": false,
+        "yaml": true
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.formatOnSave": true,
+    // use single quotes
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "material-icon-theme.folders.associations": {
+        "use-cases": "serverless",
+        "infra": "less",
+        "domain": "delta",
+        "pipeline-scripts": "pipe",
+        "cdk": "aws",
+        "application": "app",
+        "main": "views",
+        "dynamodb": "aws",
+        "repository": "database",
+        "unit": "container"
+    },
+    "material-icon-theme.files.associations": {
+        "database.ts": "database"
+    },
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "typescript.inlayHints.parameterNames.enabled": "all",
+    "[ignore]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    // eslinst fix on save
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "yaml.customTags": [
+        "!And",
+        "!And sequence",
+        "!If",
+        "!If sequence",
+        "!Not",
+        "!Not sequence",
+        "!Equals",
+        "!Equals sequence",
+        "!Or",
+        "!Or sequence",
+        "!FindInMap",
+        "!FindInMap sequence",
+        "!Base64",
+        "!Join",
+        "!Join sequence",
+        "!Cidr",
+        "!Ref",
+        "!Sub",
+        "!Sub sequence",
+        "!GetAtt",
+        "!GetAZs",
+        "!ImportValue",
+        "!ImportValue sequence",
+        "!Select",
+        "!Select sequence",
+        "!Split",
+        "!Split sequence"
+    ],
+    "prettier.useTabs": false,
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 4,
+    "prettier.printWidth": 120,
+    "prettier.singleAttributePerLine": true,
+    "prettier.trailingComma": "none",
+    "workbench.colorTheme": "IntelliJ-ish Darcula",
+    "editor.lineNumbers": "relative",
+    "workbench.editor.labelFormat": "short",
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml"
+    },
+
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ]
+}
