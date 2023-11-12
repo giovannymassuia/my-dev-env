@@ -105,5 +105,59 @@
             "before": ["j", "k"],
             "after": ["<Esc>"]
         }
-    ]
+    ],
+    "vim.leader": "<space>",
+    "vim.useSystemClipboard": true,
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+    // open explorer with <leader>ee
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "e", "e"],
+            "commands": ["workbench.files.action.focusFilesExplorer"]
+        }
+    ],
+    "vim.handleKeys": {
+        "<C-n>": false
+    },
+    // movements between panels
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<C-h>"],
+            "commands": ["workbench.action.navigateLeft"]
+        },
+        {
+            "before": ["<C-j>"],
+            "commands": ["workbench.action.navigateDown"]
+        },
+        {
+            "before": ["<C-k>"],
+            "commands": ["workbench.action.navigateUp"]
+        },
+        {
+            "before": ["<C-l>"],
+            "commands": ["workbench.action.navigateRight"]
+        },
+        // split panels
+        {
+            "before": ["<leader>", "v"],
+            "commands": ["workbench.action.splitEditorDown"]
+        },
+        {
+            "before": ["<leader>", "s"],
+            "commands": ["workbench.action.splitEditorRight"]
+        },
+        // change tabs
+        {
+            "before": ["<leader>", "t", "h"],
+            "commands": ["workbench.action.previousEditor"]
+        },
+        {
+            "before": ["<leader>", "t", "l"],
+            "commands": ["workbench.action.nextEditor"]
+        }
+    ],
+    "nerdtree.hideSidebarWhenOpenFile": false,
+    "nerdtree.alwaysShowSidebar": true
 }
