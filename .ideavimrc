@@ -116,6 +116,9 @@ map <leader>rr <Action>(Rerun)<CR>
 "" run
 map <leader>rc <Action>(Run)<CR>
 
+"" g + i to see definitions like F1
+map gi <Action>(QuickJavaDoc)
+
 "" Map \r to the Reformat Code action
 "map \r <Action>(ReformatCode)
 
