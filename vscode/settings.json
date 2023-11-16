@@ -156,6 +156,11 @@
         {
             "before": ["<leader>", "t", "l"],
             "commands": ["workbench.action.nextEditor"]
+        },
+        // opent terminal with tt
+        {
+            "before": ["<leader>", "t", "t"],
+            "commands": ["workbench.action.terminal.toggleTerminal"]
         }
     ],
     "nerdtree.hideSidebarWhenOpenFile": false,
