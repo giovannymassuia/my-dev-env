@@ -16,8 +16,18 @@ My local dev env config files
 
 ### Go
 
-- `go install -v github.com/incu6us/goimports-reviser/v3@latest`
-- `go install mvdan.cc/gofumpt@latest`
-- `go install github.com/segmentio/golines@latest`
+-   `go install -v github.com/incu6us/goimports-reviser/v3@latest`
+-   `go install mvdan.cc/gofumpt@latest`
+-   `go install github.com/segmentio/golines@latest`
 
-- Also install them using Mason
+-   Also install them using Mason
+
+### Intellij Idea
+
+-   `.ideavimrc` file path: `~/.ideavimrc`
+-   Plugins
+    -   IdeaVim
+    -   IdeaVim-EasyMotion
+    -   IdeaVimMuticursor
+    -   Which-Key
+    -   AceJump
