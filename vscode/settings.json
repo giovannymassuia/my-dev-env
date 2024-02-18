@@ -181,5 +181,6 @@
         "editor.defaultFormatter": "foxundermoon.shell-format"
     },
     "window.zoomLevel": 1,
-    "terminal.integrated.env.osx": {}
+    "terminal.integrated.env.osx": {},
+    "console-ninja.featureSet": "Community"
 }
