@@ -22,7 +22,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "github.copilot.enable": {
-        "*": true,
+        "*": false,
         "plaintext": false,
         "markdown": true,
         "scminput": false,
@@ -92,7 +92,7 @@
     "prettier.useTabs": false,
     "prettier.singleQuote": true,
     "prettier.tabWidth": 4,
-    "prettier.printWidth": 120,
+    "prettier.printWidth": 200,
     "prettier.singleAttributePerLine": true,
     "prettier.trailingComma": "none",
     "editor.lineNumbers": "relative",
@@ -162,9 +162,24 @@
         {
             "before": ["<leader>", "t", "t"],
             "commands": ["workbench.action.terminal.toggleTerminal"]
+        },
+        // show code definitions with `gi`
+        {
+            "before": ["g", "i"],
+            "commands": ["editor.action.peekDefinition"]
+        },
+        {
+            "before": ["<leader>", "j"],
+            "commands": ["extension.jumpy-word"]
         }
     ],
+    "vim.foldfix": true,
     "nerdtree.hideSidebarWhenOpenFile": false,
     "nerdtree.alwaysShowSidebar": true,
-    "workbench.colorTheme": "GitHub Dark"
+    "workbench.colorTheme": "IntelliJ-ish Darcula",
+    "[dotenv]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "window.zoomLevel": 1,
+    "terminal.integrated.env.osx": {}
 }
