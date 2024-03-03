@@ -15,6 +15,10 @@ keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 -- delete single character without copying into register
 keymap.set("n", "x", '"_x')
 
+-- start end of line
+keymap.set('n', 'L', '$', { noremap = true })
+keymap.set('n', 'H', '0', { noremap = true })
+
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
 keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
