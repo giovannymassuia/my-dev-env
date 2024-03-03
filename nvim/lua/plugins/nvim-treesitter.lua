@@ -1,4 +1,5 @@
-return { "nvim-treesitter/nvim-treesitter",
+return {
+  "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   config = function()
     local configs = require("nvim-treesitter.configs")
@@ -6,9 +7,10 @@ return { "nvim-treesitter/nvim-treesitter",
     configs.setup({
       highlight = { enable = true },
       indent = { enable = true },
-      ensure_installed = {
-        "lua"
-      },
+      --      ensure_installed = {
+      --        "lua"
+      --      },
+      auto_install = true,
     })
-  end
+  end,
 }
