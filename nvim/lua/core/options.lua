@@ -41,4 +41,4 @@ opt.splitbelow = true -- split horizontal window to the bottom
 -- turn off swapfile
 opt.swapfile = false
 
-opt.scrolloff = 8 
+opt.scrolloff = 8

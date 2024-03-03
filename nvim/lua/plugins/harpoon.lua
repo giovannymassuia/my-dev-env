@@ -24,11 +24,11 @@ return {
       vim.keymap.set("n", "<leader>hc", harpoon_mark.clear_all, { desc = "Remove all files from harpoon" })
 
       -- Quickly jump to harpooned files
-      --			vim.keymap.set("n", "<leader>1", harpoon_ui.nav_file(1))
-      --			vim.keymap.set("n", "<leader>2", harpoon_ui.nav_file(2))
-      --			vim.keymap.set("n", "<leader>3", harpoon_ui.nav_file(3))
-      --			vim.keymap.set("n", "<leader>4", harpoon_ui.nav_file(4))
-      --			vim.keymap.set("n", "<leader>5", harpoon_ui.nav_file(5))
+      vim.keymap.set("n", "<leader>1", function() harpoon_ui.nav_file(1) end)
+      vim.keymap.set("n", "<leader>2", function() harpoon_ui.nav_file(2) end)
+      vim.keymap.set("n", "<leader>3", function() harpoon_ui.nav_file(3) end)
+      vim.keymap.set("n", "<leader>4", function() harpoon_ui.nav_file(4) end)
+      vim.keymap.set("n", "<leader>5", function() harpoon_ui.nav_file(5) end)
     end,
   },
 }
