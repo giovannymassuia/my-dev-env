@@ -35,11 +35,11 @@ nnoremap("<leader>sx", "<cmd>close<CR>", "Close current split") -- close current
 nnoremap("<leader>oh", "<cmd>Alpha<CR>", "Open dashboard")
 
 -- tab management
-nnoremap("<leader>to", "<cmd>tabnew<CR>", "Open new tab") -- open new tab
-nnoremap("<leader>tx", "<cmd>tabclose<CR>", "Close current tab") -- close current tab
-nnoremap("<leader>tn", "<cmd>tabn<CR>", "Go to next tab") --  go to next tab
-nnoremap("<leader>tp", "<cmd>tabp<CR>", "Go to previous tab") --  go to previous tab
-nnoremap("<leader>tf", "<cmd>tabnew %<CR>", "Open current buffer in new tab") --  move current buffer to new tab
+-- nnoremap("<leader>to", "<cmd>tabnew<CR>", "Open new tab") -- open new tab
+-- nnoremap("<leader>tx", "<cmd>tabclose<CR>", "Close current tab") -- close current tab
+-- nnoremap("<leader>tn", "<cmd>tabn<CR>", "Go to next tab") --  go to next tab
+-- nnoremap("<leader>tp", "<cmd>tabp<CR>", "Go to previous tab") --  go to previous tab
+-- nnoremap("<leader>tf", "<cmd>tabnew %<CR>", "Open current buffer in new tab") --  move current buffer to new tab
 
 -- Map Oil to <leader>e
 nnoremap("<leader>eo", "<cmd>lua require('oil').toggle_float()<CR>", "Open Oil float explorer")
@@ -70,3 +70,22 @@ nnoremap("<leader>nn", "<cmd>Noice<CR>", "Open noice")
 nnoremap("<leader>nd", "<cmd>NoiceDismiss<CR>", "Close noice")
 nnoremap("<leader>nt", "<cmd>NoiceTelescope<CR>", "Open noice in telescope")
 nnoremap("<leader>nl", "<cmd>NoiceLast<CR>", "Open last noice")
+
+-- debugger
+whichkey_label("<leader>d", "Debugger")
+nnoremap("<leader>db", "<cmd>DapToggleBreakpoint<CR>", "Add breakpoint to line")
+nnoremap("<leader>dr", "<cmd>DapContinue<CR>", "Run or continue debugger")
+
+-- tests
+whichkey_label("<leader>t", "Tests")
+nnoremap("<leader>tr", "<cmd>Neotest run<CR>", "Run tests nearest to cursor")
+nnoremap("<leader>tf", "<cmd>Neotest run file<CR>", "Run tests in current file")
+nnoremap("<leader>tf", "<cmd>Neotest run last<CR>", "Run last test")
+nnoremap("<leader>ts", "<cmd>Neotest summary<CR>", "Show test summary")
+nnoremap("<leader>to", "<cmd>Neotest output<CR>", "Show test output")
+nnoremap(
+	"<leader>tw",
+	"<cmd>lua require('neotest').run.run({ jestCommand = 'npm test -- --watch ' })<cr>",
+	"Run tests in watch mode"
+)
+nnoremap("<leader>td", "<cmd>lua require('neotest').run.run({ strategy = 'dap' })<cr>", "Run tests with debugger")
