@@ -1,8 +1,10 @@
 return {
   {
+    -- Fugitive provides a Git wrapper for Vim
     "tpope/vim-fugitive",
   },
   {
+    -- Gitsigns provides git signs and hunk actions in the sign column
     "lewis6991/gitsigns.nvim",
     event = "VeryLazy",
     config = function()

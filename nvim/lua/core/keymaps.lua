@@ -1,45 +1,62 @@
--- set leader key to space
-vim.g.mapleader = " "
+local nnoremap = require("core.keymaps_utils").nnoremap
+local inoremap = require("core.keymaps_utils").inoremap
 
-local keymap = vim.keymap -- for conciseness
-
----------------------
+--------------------------------------
 -- General Keymaps -------------------
 
 -- use jk to exit insert mode
-keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
+inoremap("jk", "<Esc>", "Exit insert mode")
 
 -- clear search highlights
-keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
+nnoremap("<leader>nh", ":nohl<CR>", "Clear search highlights")
 
 -- delete single character without copying into register
-keymap.set("n", "x", '"_x')
+nnoremap("x", '"_x', "Delete character before cursor")
 
 -- start end of line
-keymap.set('n', 'L', '$', { noremap = true })
-keymap.set('n', 'H', '0', { noremap = true })
+nnoremap("L", "$", "Move to end of line")
+nnoremap("H", "0", "Move to start of line")
 
 -- increment/decrement numbers
-keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
-keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
+nnoremap("<leader>+", "<C-a>", "Increment number")
+nnoremap("<leader>-", "<C-x>", "Decrement number")
 
 -- window management
-keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
-keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
-keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
+nnoremap("<leader>sv", "<C-w>v", "Split window vertically") -- split window vertically
+nnoremap("<leader>sh", "<C-w>s", "Split window horizontally") -- split window horizontally
+nnoremap("<leader>se", "<C-w>=", "Make splits equal size") -- make split windows equal width & height
+nnoremap("<leader>sx", "<cmd>close<CR>", "Close current split") -- close current split window
 
-keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
-keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
-keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
-keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
-keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+--------------------------------------
+-- Plugin Keymaps -------------------
+
+-- tab management
+nnoremap("<leader>to", "<cmd>tabnew<CR>", "Open new tab") -- open new tab
+nnoremap("<leader>tx", "<cmd>tabclose<CR>", "Close current tab") -- close current tab
+nnoremap("<leader>tn", "<cmd>tabn<CR>", "Go to next tab") --  go to next tab
+nnoremap("<leader>tp", "<cmd>tabp<CR>", "Go to previous tab") --  go to previous tab
+nnoremap("<leader>tf", "<cmd>tabnew %<CR>", "Open current buffer in new tab") --  move current buffer to new tab
 
 -- Map Oil to <leader>e
-keymap.set("n", "<leader>eo", function()
-	require("oil").toggle_float()
-end, { desc = "Open Oil float explorer" })
+nnoremap("<leader>eo", "<cmd>lua require('oil').toggle_float()<CR>", "Open Oil float explorer")
 
 -- vim maximazer
-keymap.set("n", "<leader>m", ":MaximizerToggle<cr>", { desc = "Maximize current window" })
+nnoremap("<leader>m", ":MaximizerToggle<CR>", "Maximize current window")
 
+-- telescope
+local builtin = require("telescope.builtin")
+nnoremap("<leader>ff", "<cmd>Telescope find_files<cr>", "Fuzzy find files in cwd")
+nnoremap("<leader>fr", "<cmd>Telescope oldfiles<cr>", "Fuzzy find recent files")
+nnoremap("<leader>fb", builtin.buffers, "Open buffers")
+nnoremap("<leader>fg", "<cmd>Telescope live_grep<cr>", "Find string in cwd")
+nnoremap("<leader>fs", builtin.lsp_document_symbols, "Show symbols in file")
+nnoremap("<leader>fh", "<cmd>Telescope git_status<cr>", "Git options")
+nnoremap("<leader>fc", "<cmd>Telescope grep_string<cr>", "Find string under cursor in cwd")
+
+-- nvim-tree
+whichkey_label("e", "File Explorer")
+nnoremap("<leader>ee", "<cmd>NvimTreeFocus<CR>", "Toggle file explorer") -- toggle file explorer
+nnoremap("<leader>et", "<cmd>NvimTreeToggle<CR>", "Toggle file explorer") -- toggle file explorer
+nnoremap("<leader>ef", "<cmd>NvimTreeFindFile<CR>", "Toggle file explorer on current file") -- toggle file explorer on current file
+nnoremap("<leader>ec", "<cmd>NvimTreeClose<CR>", "Collapse file explorer") -- collapse file explorer
+nnoremap("<leader>er", "<cmd>NvimTreeRefresh<CR>", "Refresh file explorer") -- refresh file explorer

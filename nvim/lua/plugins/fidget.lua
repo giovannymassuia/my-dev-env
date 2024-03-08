@@ -1,3 +1,5 @@
+-- Figdet is a status line plugin that provides LSP, formatting, and linting status and progress information
+
 return {
 	"j-hui/fidget.nvim",
 	tag = "legacy",

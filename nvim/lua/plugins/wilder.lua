@@ -1,3 +1,5 @@
+-- Show completion popup menu when pressing :, / or ?
+
 return {
 	{
 		"gelguy/wilder.nvim",
