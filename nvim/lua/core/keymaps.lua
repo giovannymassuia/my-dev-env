@@ -15,7 +15,8 @@ nnoremap("x", '"_x', "Delete character before cursor")
 
 -- start end of line
 nnoremap("L", "$", "Move to end of line")
-nnoremap("H", "0", "Move to start of line")
+-- nnoremap("H", "0", "Move to start of line")
+nnoremap("H", "^", "Move to start of line (first non-blank character)")
 
 -- increment/decrement numbers
 nnoremap("<leader>+", "<C-a>", "Increment number")
@@ -63,3 +64,9 @@ nnoremap("<leader>et", "<cmd>NvimTreeToggle<CR>", "Toggle file explorer") -- tog
 nnoremap("<leader>ef", "<cmd>NvimTreeFindFile<CR>", "Toggle file explorer on current file") -- toggle file explorer on current file
 nnoremap("<leader>ec", "<cmd>NvimTreeClose<CR>", "Collapse file explorer") -- collapse file explorer
 nnoremap("<leader>er", "<cmd>NvimTreeRefresh<CR>", "Refresh file explorer") -- refresh file explorer
+
+-- noice
+nnoremap("<leader>nn", "<cmd>Noice<CR>", "Open noice")
+nnoremap("<leader>nd", "<cmd>NoiceDismiss<CR>", "Close noice")
+nnoremap("<leader>nt", "<cmd>NoiceTelescope<CR>", "Open noice in telescope")
+nnoremap("<leader>nl", "<cmd>NoiceLast<CR>", "Open last noice")

@@ -1,9 +1,14 @@
 return {
   {
     "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "prettierd",
+      },
+    },
     config = function()
       require("mason").setup()
-    end
+    end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
@@ -12,26 +17,35 @@ return {
         ensure_installed = {
           "lua_ls",
           "tsserver",
-        }
+          "tailwindcss",
+          "eslint",
+          "cssls",
+        },
       })
-    end
+    end,
   },
   {
     "neovim/nvim-lspconfig",
-    config = function ()
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    config = function()
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       local lspconfig = require("lspconfig")
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities
-      })
-      lspconfig.tsserver.setup({
-        capabilities = capabilities
-      })
+      local servers = {
+        "lua_ls",
+        "tsserver",
+        "tailwindcss",
+        "eslint",
+      }
 
-      vim.keymap.set('n', 'gi', vim.lsp.buf.hover, {})
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-      vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {})
-    end
-  }
+      for _, lsp in ipairs(servers) do
+        lspconfig[lsp].setup({
+          capabilities = capabilities,
+        })
+      end
+
+      vim.keymap.set("n", "gi", vim.lsp.buf.hover, {})
+      vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+      vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+    end,
+  },
 }
