@@ -30,6 +30,9 @@ nnoremap("<leader>sx", "<cmd>close<CR>", "Close current split") -- close current
 --------------------------------------
 -- Plugin Keymaps -------------------
 
+-- alpha dashboard
+nnoremap("<leader>oh", "<cmd>Alpha<CR>", "Open dashboard")
+
 -- tab management
 nnoremap("<leader>to", "<cmd>tabnew<CR>", "Open new tab") -- open new tab
 nnoremap("<leader>tx", "<cmd>tabclose<CR>", "Close current tab") -- close current tab
