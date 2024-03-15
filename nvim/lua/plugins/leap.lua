@@ -14,10 +14,10 @@ return {
 		leap.set_default_keymaps(true)
 
 		-- Bidirectional search
-		vim.keymap.set("n", "f", function()
+		vim.keymap.set("n", "J", function()
 			leap.leap({ target_windows = { vim.api.nvim_get_current_win() } })
 		end)
-		vim.keymap.set("x", "f", function()
+		vim.keymap.set("x", "J", function()
 			leap.leap({ target_windows = { vim.api.nvim_get_current_win() } })
 		end)
 
