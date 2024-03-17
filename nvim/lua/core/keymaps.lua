@@ -23,10 +23,14 @@ nnoremap("<leader>+", "<C-a>", "Increment number")
 nnoremap("<leader>-", "<C-x>", "Decrement number")
 
 -- window management
-nnoremap("<leader>sv", "<C-w>v", "Split window vertically") -- split window vertically
-nnoremap("<leader>sh", "<C-w>s", "Split window horizontally") -- split window horizontally
-nnoremap("<leader>se", "<C-w>=", "Make splits equal size") -- make split windows equal width & height
+nnoremap("<leader>sv", "<C-w>v", "Split window vertically")     -- split window vertically
+nnoremap("<leader>sh", "<C-w>s", "Split window horizontally")   -- split window horizontally
+nnoremap("<leader>se", "<C-w>=", "Make splits equal size")      -- make split windows equal width & height
 nnoremap("<leader>sx", "<cmd>close<CR>", "Close current split") -- close current split window
+
+-- buffer navigation
+nnoremap("<leader>bn", "<cmd>bn<CR>", "Go to next buffer")     -- go to next buffer
+nnoremap("<leader>bp", "<cmd>bp<CR>", "Go to previous buffer") -- go to previous buffer
 
 --------------------------------------
 -- Plugin Keymaps -------------------
@@ -59,11 +63,11 @@ nnoremap("<leader>fc", "<cmd>Telescope grep_string<cr>", "Find string under curs
 
 -- nvim-tree
 whichkey_label("e", "File Explorer")
-nnoremap("<leader>ee", "<cmd>NvimTreeFocus<CR>", "Toggle file explorer") -- toggle file explorer
-nnoremap("<leader>et", "<cmd>NvimTreeToggle<CR>", "Toggle file explorer") -- toggle file explorer
+nnoremap("<leader>ee", "<cmd>NvimTreeFocus<CR>", "Toggle file explorer")                    -- toggle file explorer
+nnoremap("<leader>et", "<cmd>NvimTreeToggle<CR>", "Toggle file explorer")                   -- toggle file explorer
 nnoremap("<leader>ef", "<cmd>NvimTreeFindFile<CR>", "Toggle file explorer on current file") -- toggle file explorer on current file
-nnoremap("<leader>ec", "<cmd>NvimTreeClose<CR>", "Collapse file explorer") -- collapse file explorer
-nnoremap("<leader>er", "<cmd>NvimTreeRefresh<CR>", "Refresh file explorer") -- refresh file explorer
+nnoremap("<leader>ec", "<cmd>NvimTreeClose<CR>", "Collapse file explorer")                  -- collapse file explorer
+nnoremap("<leader>er", "<cmd>NvimTreeRefresh<CR>", "Refresh file explorer")                 -- refresh file explorer
 
 -- noice
 nnoremap("<leader>nn", "<cmd>Noice<CR>", "Open noice")
@@ -84,8 +88,8 @@ nnoremap("<leader>tf", "<cmd>Neotest run last<CR>", "Run last test")
 nnoremap("<leader>ts", "<cmd>Neotest summary<CR>", "Show test summary")
 nnoremap("<leader>to", "<cmd>Neotest output<CR>", "Show test output")
 nnoremap(
-	"<leader>tw",
-	"<cmd>lua require('neotest').run.run({ jestCommand = 'npm test -- --watch ' })<cr>",
-	"Run tests in watch mode"
+  "<leader>tw",
+  "<cmd>lua require('neotest').run.run({ jestCommand = 'npm test -- --watch ' })<cr>",
+  "Run tests in watch mode"
 )
 nnoremap("<leader>td", "<cmd>lua require('neotest').run.run({ strategy = 'dap' })<cr>", "Run tests with debugger")
