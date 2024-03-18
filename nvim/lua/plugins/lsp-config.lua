@@ -90,6 +90,12 @@ return {
 			vim.keymap.set("n", "gi", vim.lsp.buf.hover, { noremap = true, silent = true, desc = "Show Hover" })
 			vim.keymap.set(
 				"n",
+				"gr",
+				vim.lsp.buf.references,
+				{ noremap = true, silent = true, desc = "Show References" }
+			)
+			vim.keymap.set(
+				"n",
 				"gd",
 				vim.lsp.buf.definition,
 				{ noremap = true, silent = true, desc = "Go to Definition" }
