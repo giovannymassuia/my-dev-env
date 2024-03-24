@@ -27,6 +27,7 @@ return {
 					"eslint",
 					"cssls",
 					"jdtls",
+					"gopls",
 				},
 				automatic_installation = false,
 			})
@@ -50,10 +51,8 @@ return {
 			local lspconfig = require("lspconfig")
 			local servers = {
 				"lua_ls",
-				"tsserver",
 				"tailwindcss",
 				"eslint",
-				-- "jdtls",
 			}
 
 			for _, lsp in ipairs(servers) do
@@ -87,6 +86,24 @@ return {
 				},
 			})
 
+			local util = require("lspconfig.util")
+			lspconfig.gopls.setup({
+				capabilities = capabilities,
+				cmd = { "gopls" },
+				filetypes = { "go", "gomod", "gowork", "gotmpl" },
+				root_dir = util.root_pattern("go.mod", ".git", "go.work"),
+				settings = {
+					gopls = {
+						completeUnimported = true,
+						usePlaceholders = true,
+						analyses = {
+							unusedparams = true,
+							shadow = true,
+						},
+					},
+				},
+			})
+
 			vim.keymap.set("n", "gi", vim.lsp.buf.hover, { noremap = true, silent = true, desc = "Show Hover" })
 			vim.keymap.set(
 				"n",
@@ -107,6 +124,9 @@ return {
 				"<cmd>:OrganizeImports<cr>",
 				{ noremap = true, silent = true, desc = "Organize Imports" }
 			)
+			-- go next and previous diagnostics
+			-- vim.keymap.set("n", "<leader>dn", vim.lsp.diagnostic.goto_next(), { desc = "Go to next diagnostic" })
+			-- vim.keymap.set("n", "<leader>dp", vim.lsp.diagnostic.goto_prev(), { desc = "Go to previous diagnostic" })
 
 			-- java
 			vim.keymap.set(

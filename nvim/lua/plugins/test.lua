@@ -6,12 +6,14 @@ return {
 			"antoinemadec/FixCursorHold.nvim",
 			"nvim-treesitter/nvim-treesitter",
 			"nvim-neotest/neotest-jest",
+			"nvim-neotest/nvim-nio",
 		},
 		requires = {
 			"nvim-lua/plenary.nvim",
 			"antoinemadec/FixCursorHold.nvim",
 			"nvim-treesitter/nvim-treesitter",
 			"nvim-neotest/neotest-jest",
+			"nvim-neotest/nvim-nio",
 		},
 		config = function(_, opts)
 			require("neotest").setup({
