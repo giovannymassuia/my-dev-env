@@ -28,6 +28,7 @@ return {
 					"cssls",
 					"jdtls",
 					"gopls",
+					"texlab",
 				},
 				automatic_installation = false,
 			})
@@ -53,6 +54,7 @@ return {
 				"lua_ls",
 				"tailwindcss",
 				"eslint",
+				"texlab",
 			}
 
 			for _, lsp in ipairs(servers) do
