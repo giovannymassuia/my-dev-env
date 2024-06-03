@@ -183,5 +183,9 @@
     "window.zoomLevel": 1,
     "terminal.integrated.env.osx": {},
     "console-ninja.featureSet": "Community",
-    "git.openRepositoryInParentFolders": "always"
+    "git.openRepositoryInParentFolders": "always",
+    "prisma.showPrismaDataPlatformNotification": false,
+    "github.copilot.editor.enableAutoCompletions": true,
+    "vim.vimrc.enable": true,
+    "vim.vimrc.path": "~/.vimrc"
 }
