@@ -187,5 +187,10 @@
     "prisma.showPrismaDataPlatformNotification": false,
     "github.copilot.editor.enableAutoCompletions": true,
     "vim.vimrc.enable": true,
-    "vim.vimrc.path": "~/.vimrc"
+    "vim.vimrc.path": "~/.vimrc",
+    "sherlock.userId": "65ce785d-6dcc-40e3-8aa1-a3f0727165df",
+    "xml.format.enabled": false,
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    }
 }
