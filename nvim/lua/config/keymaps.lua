@@ -18,6 +18,9 @@ keymap.set("i", "jk", "<Esc>", { silent = true, noremap = true, desc = "Exit ins
 -- delete single character without copying into register
 vim.keymap.set("n", "x", '"_x', opts)
 
+-- save file without auto-formatting
+  vim.keymap.set("n", "<leader>sn", "<cmd>noautocmd w <CR>", opts)
+
 -- Vertical scroll and center
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
 vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
