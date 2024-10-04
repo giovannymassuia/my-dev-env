@@ -54,6 +54,10 @@ return {
 						["<C-j>"] = require("telescope.actions").move_selection_next, -- move to next result
 						["<C-l>"] = require("telescope.actions").select_default, -- open file
 					},
+					n = {
+						-- close telescope with 'q'
+						["q"] = require("telescope.actions").close,
+					},
 				},
 			},
 			pickers = {
