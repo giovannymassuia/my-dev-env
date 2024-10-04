@@ -15,14 +15,29 @@ keymap.set("n", "<C-Space>", "<Cmd>NvimTmuxNavigateNavigateNext<CR>", { silent =
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<Esc>", { silent = true, noremap = true, desc = "Exit insert mode" })
 
+-- delete single character without copying into register
+vim.keymap.set("n", "x", '"_x', opts)
+
+-- Vertical scroll and center
+vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
+vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
+
+-- Find and center
+vim.keymap.set("n", "n", "nzzzv", opts)
+vim.keymap.set("n", "N", "Nzzzv", opts)
+
+-- Stay in indent mode
+vim.keymap.set("v", "<", "<gv", opts)
+vim.keymap.set("v", ">", ">gv", opts)
+
 -- Borderless terminal
 vim.keymap.set("n", "<C-/>", function()
-  Util.terminal(nil, { border = "none" })
+	Util.terminal(nil, { border = "none" })
 end, { desc = "Term with border" })
 
 -- Borderless lazygit
 vim.keymap.set("n", "<leader>gg", function()
-  Util.terminal({ "lazygit" }, { cwd = Util.root(), esc_esc = false, ctrl_hjkl = false, border = "none" })
+	Util.terminal({ "lazygit" }, { cwd = Util.root(), esc_esc = false, ctrl_hjkl = false, border = "none" })
 end, { desc = "Lazygit (root dir)" })
 
 keymap.del({ "n", "i", "v" }, "<A-j>")
@@ -50,32 +65,32 @@ keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
 
 -- package-info keymaps
 set_keymap(
-  "n",
-  "<leader>cpt",
-  "<cmd>lua require('package-info').toggle()<cr>",
-  { silent = true, noremap = true, desc = "Toggle" }
+	"n",
+	"<leader>cpt",
+	"<cmd>lua require('package-info').toggle()<cr>",
+	{ silent = true, noremap = true, desc = "Toggle" }
 )
 set_keymap(
-  "n",
-  "<leader>cpd",
-  "<cmd>lua require('package-info').delete()<cr>",
-  { silent = true, noremap = true, desc = "Delete package" }
+	"n",
+	"<leader>cpd",
+	"<cmd>lua require('package-info').delete()<cr>",
+	{ silent = true, noremap = true, desc = "Delete package" }
 )
 set_keymap(
-  "n",
-  "<leader>cpu",
-  "<cmd>lua require('package-info').update()<cr>",
-  { silent = true, noremap = true, desc = "Update package" }
+	"n",
+	"<leader>cpu",
+	"<cmd>lua require('package-info').update()<cr>",
+	{ silent = true, noremap = true, desc = "Update package" }
 )
 set_keymap(
-  "n",
-  "<leader>cpi",
-  "<cmd>lua require('package-info').install()<cr>",
-  { silent = true, noremap = true, desc = "Install package" }
+	"n",
+	"<leader>cpi",
+	"<cmd>lua require('package-info').install()<cr>",
+	{ silent = true, noremap = true, desc = "Install package" }
 )
 set_keymap(
-  "n",
-  "<leader>cpc",
-  "<cmd>lua require('package-info').change_version()<cr>",
-  { silent = true, noremap = true, desc = "Change package version" }
+	"n",
+	"<leader>cpc",
+	"<cmd>lua require('package-info').change_version()<cr>",
+	{ silent = true, noremap = true, desc = "Change package version" }
 )

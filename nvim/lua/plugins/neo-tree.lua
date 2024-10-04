@@ -1,23 +1,30 @@
 return {
-    "nvim-neo-tree/neo-tree.nvim",
-    opts = {
-      window = {
-        position = "right",
-        mappings = {
-          ["Y"] = "none",
-        },
-      },
-      filesystem = {
-        filtered_items = {
-          hide_dotfiles = false,
-          hide_by_name = {
-            ".git",
-            ".DS_Store",
-          },
-          always_show = {
-            ".env",
-          },
-        },
-      },
-    },
-  }
+	"nvim-neo-tree/neo-tree.nvim",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"nvim-tree/nvim-web-devicons",
+		"MunifTanjim/nui.nvim",
+		"3rd/image.nvim",
+	},
+	opts = {
+		window = {
+			position = "right",
+			mappings = {
+				["Y"] = "none",
+			},
+		},
+		filesystem = {
+			filtered_items = {
+				hide_dotfiles = false,
+				hide_by_name = {
+					".git",
+					".DS_Store",
+				},
+				always_show = {
+					".env",
+				},
+			},
+		},
+	},
+}
+
