@@ -192,5 +192,9 @@
     "xml.format.enabled": false,
     "[dockerfile]": {
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-    }
+    },
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "cSpell.userWords": [
+        "tseslint"
+    ]
 }
