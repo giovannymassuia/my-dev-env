@@ -37,4 +37,6 @@ return {
 		--  <C-x> - Skip cursor
 		--  <C-p> - Remove cursor
 	},
+
+	{ "sindrets/diffview.nvim" },
 }
