@@ -1,3 +1,6 @@
+local nnoremap = require("config.keymaps_utils").nnoremap
+local inoremap = require("config.keymaps_utils").inoremap
+
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
@@ -105,3 +108,14 @@ set_keymap(
 
 -- notifications
 keymap.set("n", "<leader>n", "<Cmd>Notifications<CR>", { silent = true, noremap = true, desc = "Notifications" })
+
+-- nvim-tree
+whichkey_label("e", "File Explorer")
+nnoremap("<leader>ee", "<cmd>NvimTreeFocus<CR>", "Toggle file explorer") -- toggle file explorer
+nnoremap("<leader>et", "<cmd>NvimTreeToggle<CR>", "Toggle file explorer") -- toggle file explorer
+nnoremap("<leader>ef", "<cmd>NvimTreeFindFile<CR>", "Toggle file explorer on current file") -- toggle file explorer on current file
+nnoremap("<leader>ec", "<cmd>NvimTreeClose<CR>", "Collapse file explorer") -- collapse file explorer
+nnoremap("<leader>er", "<cmd>NvimTreeRefresh<CR>", "Refresh file explorer") -- refresh file explorer
+
+-- Map Oil to <leader>e
+nnoremap("<leader>eo", "<cmd>lua require('oil').toggle_float()<CR>", "Open Oil float explorer")
