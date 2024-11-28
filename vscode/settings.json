@@ -4,16 +4,12 @@
     "editor.inlineSuggest.enabled": true,
     "java.import.gradle.java.home": "/opt/homebrew/Cellar/openjdk@17/17.0.6/libexec/openjdk.jdk/Contents/Home",
     "workbench.iconTheme": "material-icon-theme",
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
+
     "editor.fontSize": 14,
     "explorer.compactFolders": false,
     "editor.fontLigatures": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
+
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -30,8 +26,6 @@
     },
     "typescript.updateImportsOnFileMove.enabled": "always",
     "editor.formatOnSave": true,
-    // use single quotes
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "material-icon-theme.folders.associations": {
         "use-cases": "serverless",
         "infra": "less",
@@ -194,9 +188,12 @@
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
     },
     "diffEditor.hideUnchangedRegions.enabled": true,
-    "cSpell.userWords": [
-        "Keela",
-        "tseslint"
-    ],
-    "workbench.editor.enablePreview": true
+    "cSpell.userWords": ["Keela", "tseslint"],
+    "workbench.editor.enablePreview": true,
+    "[vue]": {
+        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    },
+    "[typescript]": {
+        
+    }
 }
