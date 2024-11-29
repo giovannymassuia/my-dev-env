@@ -31,3 +31,10 @@ My local dev env config files
     -   IdeaVimMuticursor
     -   Which-Key
     -   AceJump
+
+### Nvim link folder
+- `ln -s ~/personal/my-dev-env/nvim ~/.config/nvim`
+
+### Uninstall Nvim
+- Clean `nvim` folder - link created above
+- `rm -rf ~/.local/share/nvim`
