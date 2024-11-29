@@ -38,3 +38,5 @@ My local dev env config files
 ### Uninstall Nvim
 - Clean `nvim` folder - link created above
 - `rm -rf ~/.local/share/nvim`
+- `rm -rf ~/.local/state/nvim`
+- `rm -rf ~/.cache/nvim`
