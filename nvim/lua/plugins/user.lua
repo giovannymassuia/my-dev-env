@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- Here are some examples:
 
@@ -23,24 +21,18 @@ return {
     opts = function(_, opts)
       -- customize the dashboard header
       opts.section.header.val = {
-        " █████  ███████ ████████ ██████   ██████",
-        "██   ██ ██         ██    ██   ██ ██    ██",
-        "███████ ███████    ██    ██████  ██    ██",
-        "██   ██      ██    ██    ██   ██ ██    ██",
-        "██   ██ ███████    ██    ██   ██  ██████",
-        " ",
-        "    ███    ██ ██    ██ ██ ███    ███",
-        "    ████   ██ ██    ██ ██ ████  ████",
-        "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-        "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-        "    ██   ████   ████   ██ ██      ██",
+        "███    ██ ██    ██ ██ ███    ███",
+        "████   ██ ██    ██ ██ ████  ████",
+        "██ ██  ██ ██    ██ ██ ██ ████ ██",
+        "██  ██ ██  ██  ██  ██ ██  ██  ██",
+        "██   ████   ████   ██ ██      ██",
       }
       return opts
     end,
   },
 
   -- You can disable default plugins as follows:
-  { "max397574/better-escape.nvim", enabled = false },
+  { "max397574/better-escape.nvim", enabled = true },
 
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
   {
@@ -80,6 +72,26 @@ return {
         -- disable for .vim files, but it work for another filetypes
         Rule("a", "a", "-vim")
       )
+    end,
+  },
+  {
+    "onsails/lspkind.nvim",
+    opts = function(_, opts)
+      -- use codicons preset
+      opts.preset = "codicons"
+      opts.mode = "symbol_text"
+      -- set some missing symbol types
+      opts.symbol_map = {
+        Array = "",
+        Boolean = "",
+        Key = "",
+        Namespace = "",
+        Null = "",
+        Number = "",
+        Object = "",
+        Package = "",
+        String = "",
+      }
     end,
   },
 }

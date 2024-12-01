@@ -89,7 +89,7 @@
     "prettier.printWidth": 200,
     "prettier.singleAttributePerLine": true,
     "prettier.trailingComma": "none",
-    "editor.lineNumbers": "relative",
+    "editor.lineNumbers": "on",
     "workbench.editor.labelFormat": "short",
     "[xml]": {
         "editor.defaultFormatter": "redhat.vscode-xml"
@@ -188,7 +188,11 @@
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
     },
     "diffEditor.hideUnchangedRegions.enabled": true,
-    "cSpell.userWords": ["Keela", "tseslint"],
+    "cSpell.userWords": [
+        "Filestack",
+        "Keela",
+        "tseslint"
+    ],
     "workbench.editor.enablePreview": true,
     "[vue]": {
         "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
