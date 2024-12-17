@@ -6,6 +6,7 @@
     "workbench.iconTheme": "material-icon-theme",
 
     "editor.fontSize": 14,
+    "editor.maxTokenizationLineLength": 10000,
     "explorer.compactFolders": false,
     "editor.fontLigatures": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
@@ -38,7 +39,11 @@
         "repository": "database",
         "unit": "container",
         "controller": "container",
-        "http": "container"
+        "http": "container",
+        "transactions": "cart",
+        "campaigns": "benchmark",
+        "contacts": "enum",
+        "contacts-placeholder": "enum",
     },
     "material-icon-theme.files.associations": {
         "database.ts": "database"
@@ -189,15 +194,51 @@
     },
     "diffEditor.hideUnchangedRegions.enabled": true,
     "cSpell.userWords": [
+        "BITPAY",
         "Filestack",
+        "inkind",
+        "kafkajs",
         "Keela",
-        "tseslint"
+        "KEELAPAY",
+        "monbodb",
+        "raisely",
+        "rebalance",
+        "testset",
+        "trivago",
+        "tseslint",
+        "Unreceipted"
     ],
     "workbench.editor.enablePreview": true,
     "[vue]": {
         "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
     },
     "[typescript]": {
+        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
         
-    }
+    },
+
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "*.ts": "$(capture).spec.ts"
+    },
+
+    "typescript.preferences.importModuleSpecifier": "non-relative",
+    "javascript.preferences.importModuleSpecifier": "non-relative",
+
+
+    // confirm before closing application
+    "window.confirmBeforeClose": "keyboardOnly",
+
+    /*
+    [*.{yaml,yml}]
+    indent_size = 2
+    */
+    "editor.indentSize": 2,
+
+    "git.blame.editorDecoration.enabled": true,
+    "git.blame.statusBarItem.enabled": true,
+    "git.blame.editorDecoration.template": "${subject}, ${authorName} (${authorDateAgo})",
+
+    "typescript.experimental.expandableHover": true,
+
 }
